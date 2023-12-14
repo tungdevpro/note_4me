@@ -1,0 +1,17 @@
+When fetch or pull a repo & you will receive a message like this:
+
+```
+Writing objects: 100% (25/25), 187.79 KiB | 9.39 MiB/s, done.
+Total 25 (delta 1), reused 0 (delta 0), pack-reused 0
+send-pack: unexpected disconnect while reading sideband packet
+fatal: the remote end hung up unexpectedly
+```
+And you only need paste the code snippet bellow in **.gitconfig**:
+
+[core] 
+    packedGitLimit = 512m 
+    packedGitWindowSize = 512m 
+[pack] 
+    deltaCacheSize = 2047m 
+    packSizeLimit = 2047m 
+    windowMemory = 2047m
