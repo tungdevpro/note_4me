@@ -1,0 +1,10 @@
+When using git to curl anything, t have receive a message "Error: curl 56 HTTP/2 stream N was reset #11353"
+
+Solution:
+```bash
+git config --global http.version HTTP/1.1
+```
+and 
+```bash
+git config --global http.version HTTP/2
+```
